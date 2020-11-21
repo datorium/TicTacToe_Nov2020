@@ -24,16 +24,39 @@ namespace TicTacToe_Nov2020
             var picture = (PictureBox)sender;
 
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
+            
+            if((string)picture.Tag == "X" || (string)picture.Tag == "O")
+            {
+                return;
+            }
+
             if (turn == "X")
             {
                 picture.Image = Properties.Resources.x;
+                picture.Tag = turn;
+                CheckWinner();
                 turn = "O";
             }
             else
             {
                 picture.Image = Properties.Resources.o;
+                picture.Tag = turn;
+                CheckWinner();
                 turn = "X";
             }
+        }
+
+        private void CheckWinner()
+        {
+            if(pictureBox1.Tag == pictureBox2.Tag && pictureBox1 == pictureBox3.Tag)
+            {
+                GameOver();
+            }
+        }
+
+        private void GameOver()
+        {
+            MessageBox.Show("The winner is " + turn);
         }
     }
 }
