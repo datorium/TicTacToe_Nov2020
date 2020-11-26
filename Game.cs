@@ -19,18 +19,27 @@ namespace TicTacToe_Nov2020
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox_Click(object sender, EventArgs e)
         {
-            if(turn == "x")
+            var picture = (PictureBox)sender;
+
+            if((string)picture.Tag == "x" || (string)picture.Tag == "o")
             {
-                pictureBox1.Image = Properties.Resources.x;
+                return;
+            }
+
+            if (turn == "x")
+            {
+                picture.Image = Properties.Resources.x;
+                picture.Tag = "x";
                 turn = "o";
             }
             else
             {
-                pictureBox1.Image = Properties.Resources.o;
+                picture.Image = Properties.Resources.o;
+                picture.Tag = "o";
                 turn = "x";
-            }            
+            }
         }
     }
 }
