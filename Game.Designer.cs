@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe_Nov2020
 {
-    partial class Form1
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.Grid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -66,22 +67,22 @@
             this.Grid.Controls.Add(this.pictureBox3, 2, 0);
             this.Grid.Controls.Add(this.pictureBox2, 1, 0);
             this.Grid.Controls.Add(this.pictureBox1, 0, 0);
-            this.Grid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grid.Location = new System.Drawing.Point(0, 0);
             this.Grid.Name = "Grid";
             this.Grid.RowCount = 3;
             this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.Grid.Size = new System.Drawing.Size(746, 503);
+            this.Grid.Size = new System.Drawing.Size(449, 418);
             this.Grid.TabIndex = 0;
+            this.Grid.Paint += new System.Windows.Forms.PaintEventHandler(this.Grid_Paint);
             // 
             // pictureBox9
             // 
             this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox9.Location = new System.Drawing.Point(500, 339);
+            this.pictureBox9.Location = new System.Drawing.Point(302, 281);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(241, 159);
+            this.pictureBox9.Size = new System.Drawing.Size(142, 132);
             this.pictureBox9.TabIndex = 8;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Click += new System.EventHandler(this.PictureBox_Click);
@@ -89,9 +90,9 @@
             // pictureBox8
             // 
             this.pictureBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox8.Location = new System.Drawing.Point(252, 339);
+            this.pictureBox8.Location = new System.Drawing.Point(153, 281);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(240, 159);
+            this.pictureBox8.Size = new System.Drawing.Size(141, 132);
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Click += new System.EventHandler(this.PictureBox_Click);
@@ -99,9 +100,9 @@
             // pictureBox7
             // 
             this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox7.Location = new System.Drawing.Point(5, 339);
+            this.pictureBox7.Location = new System.Drawing.Point(5, 281);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(239, 159);
+            this.pictureBox7.Size = new System.Drawing.Size(140, 132);
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.PictureBox_Click);
@@ -109,9 +110,9 @@
             // pictureBox6
             // 
             this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox6.Location = new System.Drawing.Point(500, 172);
+            this.pictureBox6.Location = new System.Drawing.Point(302, 143);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(241, 159);
+            this.pictureBox6.Size = new System.Drawing.Size(142, 130);
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.PictureBox_Click);
@@ -119,9 +120,9 @@
             // pictureBox5
             // 
             this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox5.Location = new System.Drawing.Point(252, 172);
+            this.pictureBox5.Location = new System.Drawing.Point(153, 143);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(240, 159);
+            this.pictureBox5.Size = new System.Drawing.Size(141, 130);
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.PictureBox_Click);
@@ -129,9 +130,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox4.Location = new System.Drawing.Point(5, 172);
+            this.pictureBox4.Location = new System.Drawing.Point(5, 143);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(239, 159);
+            this.pictureBox4.Size = new System.Drawing.Size(140, 130);
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.PictureBox_Click);
@@ -139,9 +140,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(500, 5);
+            this.pictureBox3.Location = new System.Drawing.Point(302, 5);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(241, 159);
+            this.pictureBox3.Size = new System.Drawing.Size(142, 130);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.PictureBox_Click);
@@ -149,9 +150,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(252, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(153, 5);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(240, 159);
+            this.pictureBox2.Size = new System.Drawing.Size(141, 130);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.PictureBox_Click);
@@ -161,16 +162,29 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(5, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(239, 159);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 130);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReset.Location = new System.Drawing.Point(48, 440);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(378, 74);
+            this.buttonReset.TabIndex = 2;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Visible = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 503);
+            this.ClientSize = new System.Drawing.Size(466, 536);
+            this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.Grid);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -200,6 +214,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonReset;
     }
 }
 
