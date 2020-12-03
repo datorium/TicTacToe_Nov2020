@@ -15,6 +15,9 @@ namespace TicTacToe_Nov2020
         private string turn = "X";
         private int turnCounter = 0;
         private bool gameOver = false;
+        private int gameCounter = 0;
+        private int scoreX = 0;
+        private int scoreY = 0;
 
         public Game()
         {

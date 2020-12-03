@@ -39,6 +39,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.pictureBoxX = new System.Windows.Forms.PictureBox();
+            this.pictureBoxO = new System.Windows.Forms.PictureBox();
+            this.labelScoreX = new System.Windows.Forms.Label();
+            this.labelScoreO = new System.Windows.Forms.Label();
             this.Grid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -49,6 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxO)).BeginInit();
             this.SuspendLayout();
             // 
             // Grid
@@ -73,6 +79,7 @@
             this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.Grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.Grid.Size = new System.Drawing.Size(449, 418);
             this.Grid.TabIndex = 0;
             this.Grid.Paint += new System.Windows.Forms.PaintEventHandler(this.Grid_Paint);
@@ -170,23 +177,67 @@
             // buttonReset
             // 
             this.buttonReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReset.Location = new System.Drawing.Point(48, 440);
+            this.buttonReset.Location = new System.Drawing.Point(481, 339);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(378, 74);
+            this.buttonReset.Size = new System.Drawing.Size(293, 74);
             this.buttonReset.TabIndex = 2;
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Visible = false;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
-            // Form1
+            // pictureBoxX
+            // 
+            this.pictureBoxX.Image = global::TicTacToe_Nov2020.Properties.Resources.x;
+            this.pictureBoxX.Location = new System.Drawing.Point(481, 12);
+            this.pictureBoxX.Name = "pictureBoxX";
+            this.pictureBoxX.Size = new System.Drawing.Size(134, 123);
+            this.pictureBoxX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxX.TabIndex = 3;
+            this.pictureBoxX.TabStop = false;
+            // 
+            // pictureBoxO
+            // 
+            this.pictureBoxO.Image = global::TicTacToe_Nov2020.Properties.Resources.o;
+            this.pictureBoxO.Location = new System.Drawing.Point(640, 12);
+            this.pictureBoxO.Name = "pictureBoxO";
+            this.pictureBoxO.Size = new System.Drawing.Size(134, 123);
+            this.pictureBoxO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxO.TabIndex = 4;
+            this.pictureBoxO.TabStop = false;
+            // 
+            // labelScoreX
+            // 
+            this.labelScoreX.AutoSize = true;
+            this.labelScoreX.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScoreX.Location = new System.Drawing.Point(530, 171);
+            this.labelScoreX.Name = "labelScoreX";
+            this.labelScoreX.Size = new System.Drawing.Size(41, 44);
+            this.labelScoreX.TabIndex = 5;
+            this.labelScoreX.Text = "0";
+            // 
+            // labelScoreO
+            // 
+            this.labelScoreO.AutoSize = true;
+            this.labelScoreO.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelScoreO.Location = new System.Drawing.Point(686, 171);
+            this.labelScoreO.Name = "labelScoreO";
+            this.labelScoreO.Size = new System.Drawing.Size(41, 44);
+            this.labelScoreO.TabIndex = 6;
+            this.labelScoreO.Text = "0";
+            // 
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 536);
+            this.ClientSize = new System.Drawing.Size(794, 419);
+            this.Controls.Add(this.labelScoreO);
+            this.Controls.Add(this.labelScoreX);
+            this.Controls.Add(this.pictureBoxO);
+            this.Controls.Add(this.pictureBoxX);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.Grid);
-            this.Name = "Form1";
+            this.Name = "Game";
             this.Text = "Form1";
             this.Grid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -198,7 +249,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxO)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -215,6 +269,10 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.PictureBox pictureBoxX;
+        private System.Windows.Forms.PictureBox pictureBoxO;
+        private System.Windows.Forms.Label labelScoreX;
+        private System.Windows.Forms.Label labelScoreO;
     }
 }
 
