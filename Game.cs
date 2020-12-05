@@ -128,9 +128,19 @@ namespace TicTacToe_Nov2020
 
         private void buttonReset_Click(object sender, EventArgs e)
         {
+
+            PictureBox picture;
+            for(int i = 1; i < 10; i++)
+            {
+                picture = (PictureBox)Grid.Controls["pictureBox" + i];
+                picture.BackColor = Color.LightSteelBlue;
+                picture.Tag = null;
+                picture.Image = null;
+            }
+            
             foreach (var item in Grid.Controls)
             {
-                PictureBox picture = (PictureBox)item;
+                picture = (PictureBox)item;
                 picture.BackColor = Color.LightSteelBlue;
                 picture.Tag = null;
                 picture.Image = null;
